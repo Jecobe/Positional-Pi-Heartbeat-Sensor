@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heartbeat Radar</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23ff3b4e' d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.2-2.4 4.3-2.4 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z'/></svg>">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Heartbeat Radar</h1>
+    <div id="status" class="pill pill-wait" title="">
+      <span class="dot"></span><span id="status-text">Connecting…</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="map-wrap" aria-label="Top-down view of the area the radar covers">
+      <canvas id="map"></canvas>
+      <p id="empty" class="empty" hidden>No one detected</p>
+    </section>
+
+    <aside class="panel">
+      <div class="card hero">
+        <svg id="heart" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.2-2.4 4.3-2.4 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/>
+        </svg>
+        <div>
+          <div class="label">Heart rate</div>
+          <div class="big"><span id="hr">--</span><small>bpm</small></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="label">Heartbeat signal</div>
+        <canvas id="wave"></canvas>
+      </div>
+
+      <div class="stats">
+        <div class="card">
+          <div class="label">Breathing</div>
+          <div class="mid"><span id="br">--</span><small>/min</small></div>
+        </div>
+        <div class="card">
+          <div class="label">Distance</div>
+          <div class="mid"><span id="dist">--</span><small>m</small></div>
+        </div>
+        <div class="card">
+          <div class="label">People</div>
+          <div class="mid"><span id="count">0</span></div>
+        </div>
+      </div>
+
+      <p class="note">
+        For fun, not a medical device. Radar heart rate needs the person to be
+        fairly still and within about 1.5 m of the sensor.
+      </p>
+      <p id="meta" class="meta"></p>
+    </aside>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "heartbeat-radar"
+version = "0.1.0"
+description = "Raspberry Pi mmWave radar that shows where people are and pulses a dot with their heartbeat."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "websockets>=12",
+    "pyserial>=3.5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[project.scripts]
+heartbeat-radar = "heartbeat_radar.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["heartbeat_radar*"]
+
+[tool.setuptools.package-data]
+heartbeat_radar = ["static/*"]
