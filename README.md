@@ -6,9 +6,6 @@ all without touching anyone. You view it in a web browser on your phone or compu
 
 ![Web UI running against the built-in simulator](docs/screenshot.png)
 
-> **This is a fun project, not a medical device.** Radar heart rate is an estimate.
-> Don't use it for health decisions.
-
 ## How it works
 
 ```
@@ -38,10 +35,10 @@ What to expect from the sensor:
 | USB-A to USB-C **data** cable | Connects the radar kit to the Pi. Some cables are charge-only and won't work | $5 |
 | Pi power supply (5 V / 3 A USB-C) | The official one is recommended | — |
 
-No soldering, no screen, and no GPIO wiring. See [docs/SETUP.md](docs/SETUP.md) for
+This doesn't require any soldering and  GPIO wiring. See [docs/SETUP.md](docs/SETUP.md) for
 the full step-by-step guide.
 
-## Quick start: try it without hardware
+## Quick start: trying a hardware-less demo
 
 The simulator produces real MR60BHA2 frames, so you can see the UI on any computer
 before the radar arrives:
