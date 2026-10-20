@@ -1,5 +1,9 @@
 "use strict";
 
+if (new URLSearchParams(location.search).has("kiosk")) {
+  document.documentElement.classList.add("kiosk");
+}
+
 // --- Live data -------------------------------------------------------------
 
 let latest = null;        // last snapshot from the server

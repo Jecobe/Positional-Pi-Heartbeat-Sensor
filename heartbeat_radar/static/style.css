@@ -115,3 +115,34 @@ main {
   .map-wrap { height: min(80vw, 60vh); min-height: 260px; }
   .panel { border-left: 0; border-top: 1px solid var(--line); }
 }
+
+/* Small landscape screens (e.g. 800x480 or 480x320 Pi displays): keep the map
+   beside the stats instead of stacking, so nothing needs scrolling. */
+@media (orientation: landscape) and (max-height: 560px) {
+  header { padding: 6px 12px; }
+  h1 { font-size: 15px; }
+  main { grid-template-columns: 1fr minmax(200px, 34%); grid-template-rows: none; }
+  .map-wrap { height: auto; min-height: 0; }
+  .panel { border-top: 0; border-left: 1px solid var(--line); padding: 10px; gap: 8px; }
+  .card { padding: 8px 10px; }
+  .hero { gap: 10px; }
+  #heart { width: 36px; height: 36px; }
+  .big { font-size: 32px; }
+  .mid { font-size: 18px; }
+  #wave { height: 44px; }
+  .stats { gap: 6px; }
+  .stats .card { padding: 6px 8px; }
+  .note, .meta { display: none; }
+}
+
+/* Tiny screens (480x320): drop the waveform and list the stats as rows. */
+@media (orientation: landscape) and (max-height: 360px) {
+  main { grid-template-columns: 1fr 170px; }
+  .wave-card { display: none; }
+  .stats { grid-template-columns: 1fr; }
+  .stats .card { display: flex; justify-content: space-between; align-items: baseline; }
+  .big { font-size: 28px; }
+}
+
+/* On the Pi's own display (?kiosk=1) there's no mouse to show. */
+.kiosk, .kiosk * { cursor: none !important; }

@@ -68,6 +68,19 @@ Then open <http://localhost:8000>.
    ```
 4. Open `http://<pi-hostname>.local:8000`.
 
+### Optional: attached display
+
+To show the radar on a screen plugged into the Pi (HDMI, the official DSI
+touchscreen, or another display the Pi supports), install with `--display`:
+
+```bash
+./scripts/install.sh --display
+```
+
+On boot, the Pi then shows the same view as the web UI, full screen, in place
+of the login prompt. The web UI keeps working at the same time. Run
+`./scripts/install.sh --no-display` to switch back.
+
 Full details and troubleshooting are in [docs/SETUP.md](docs/SETUP.md).
 
 ## Options
@@ -97,7 +110,7 @@ heartbeat_radar/
   server.py                 FastAPI app: static UI + /ws WebSocket + /api/state
   static/                   the web UI (no build step, no internet needed)
 firmware/                   XIAO ESP32C6 USB bridge sketch
-scripts/install.sh          Pi installer and systemd service
+scripts/                    Pi installer, systemd services, attached-display kiosk
 docs/                       setup guide and protocol notes
 ```
 

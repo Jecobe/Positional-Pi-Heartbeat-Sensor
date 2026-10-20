@@ -67,6 +67,30 @@ The installer does four things:
 Then open **http://heartbeat.local:8000** on your phone or computer. Use the
 hostname you picked in step 2 if it's different.
 
+### Optional: show it on an attached display
+
+If a display is connected to the Pi, the installer can make it show the radar
+full screen on boot, the same view as the web UI:
+
+```bash
+./scripts/install.sh --display
+sudo reboot
+```
+
+How it works: a small kiosk program ([cage](https://github.com/cage-kiosk/cage))
+runs Chromium full screen on the Pi's first screen, pointed at the local web UI.
+There's no desktop, no mouse cursor and nothing else on screen.
+
+- Works with HDMI displays, the official Raspberry Pi touch displays, and other
+  displays the Pi supports out of the box.
+- Small screens are supported. The layout adapts down to 480×320.
+- It uses about 300–400 MB of RAM, so a Pi with 2 GB or more is comfortable.
+  A 1 GB Pi will work but is tight.
+- It's meant for **Raspberry Pi OS Lite**. On the desktop version, the radar
+  display takes over the first screen instead of the desktop.
+- To turn it off again: `./scripts/install.sh --no-display`
+- Logs: `journalctl -u heartbeat-display -f`
+
 ## 5. Check that the radar is talking
 
 Stop the service so you can read the port directly, then dump the decoded frames:
