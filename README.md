@@ -4,7 +4,7 @@ A Raspberry Pi + 60 GHz mmWave radar that shows a **top-down map** of the area i
 front of it, with a **red dot for each person that pulses with their heartbeat**,
 all without touching anyone. You view it in a web browser on your phone or computer.
 
-![Web UI running against the built-in simulator](docs/screenshot.png)
+![Web UI running against the built-in simulator](docs/demo.gif)
 
 ## How it works
 
