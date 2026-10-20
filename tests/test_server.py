@@ -9,7 +9,9 @@ def test_serves_ui_and_streams_state():
     app = create_app(SimulatedSource(seed=2), SensorState(source="simulator"))
     with TestClient(app) as client:
         assert "Heartbeat Radar" in client.get("/").text
-        assert client.get("/static/app.js").status_code == 200
+        script = client.get("/static/app.js")
+        assert script.status_code == 200
+        assert script.headers["cache-control"] == "no-cache"
         assert client.get("/api/state").json()["type"] == "state"
         with client.websocket_connect("/ws") as ws:
             first = ws.receive_json()

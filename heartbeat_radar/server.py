@@ -79,6 +79,13 @@ def create_app(source: Source, state: SensorState) -> FastAPI:
         finally:
             clients.discard(ws)
 
+    @app.middleware("http")
+    async def no_stale_ui(request, call_next):
+        # Browsers otherwise keep showing an old UI after the app is updated.
+        response = await call_next(request)
+        response.headers["Cache-Control"] = "no-cache"
+        return response
+
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
     return app
 
