@@ -5,18 +5,18 @@ about an hour.
 
 ## 1. Parts
 
-- Raspberry Pi 4 and its power supply
+- A Raspberry Pi (3, 4 or 5) and its power supply
 - **Seeed Studio MR60BHA2 60 GHz mmWave Breathing and Heartbeat kit**. It comes
-  with a XIAO ESP32C6 already attached. Buy it from Seeed, Amazon, Mouser or
-  Digi-Key. It isn't a usual Micro Center item, so check their site before you go.
-- A new **microSD card** (16–32 GB, A1 or A2 rated). Keep your PiKVM card as it is.
-  You can swap cards whenever you want to go back.
+  with a XIAO ESP32C6 already attached. It's sold by Seeed Studio and electronics
+  distributors such as Mouser and Digi-Key.
+- A **microSD card** (16–32 GB, A1 or A2 rated). The setup erases it, so use a
+  spare card if your Pi already has a system you want to keep.
 - A **USB-A to USB-C data cable** to connect the radar kit to the Pi.
 
 ## 2. Prepare the microSD card
 
 1. On your computer, install [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
-2. Choose **Raspberry Pi 4**, then **Raspberry Pi OS (other) → Raspberry Pi OS Lite (64-bit)**,
+2. Choose your Pi model, then **Raspberry Pi OS (other) → Raspberry Pi OS Lite (64-bit)**,
    then your card.
 3. When it asks about OS customisation, click **Edit settings** and set:
    - hostname: `heartbeat` (the UI will then be at `http://heartbeat.local:8000`)

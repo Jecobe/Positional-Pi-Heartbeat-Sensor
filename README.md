@@ -31,9 +31,9 @@ What to expect from the sensor:
 |---|---|---|
 | Raspberry Pi | 3/4/5 (2 GB is plenty) | — |
 | **Seeed MR60BHA2 60 GHz mmWave kit** | Comes with the XIAO ESP32C6 attached | $27 |
-| microSD card, 16–32 GB | Separate from your PiKVM card, so you can swap back | $8 |
+| microSD card, 16–32 GB | Gets erased, so use a spare if your Pi already has a system you want to keep | $8 |
 | USB-A to USB-C **data** cable | Connects the radar kit to the Pi. Some cables are charge-only and won't work | $5 |
-| Pi power supply (5 V / 3 A USB-C) | The official one is recommended | — |
+| Pi power supply | The official one for your Pi model is recommended | — |
 
 This doesn't require any soldering and  GPIO wiring. See [docs/SETUP.md](docs/SETUP.md) for
 the full step-by-step guide.
